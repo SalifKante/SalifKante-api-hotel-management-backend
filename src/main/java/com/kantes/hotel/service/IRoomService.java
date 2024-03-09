@@ -6,13 +6,18 @@ import java.sql.SQLException;
 
 import javax.sql.rowset.serial.SerialException;
 
+import org.hibernate.mapping.List;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.kantes.hotel.model.Room;
 
 
+
 public interface IRoomService {
 
     Room addNewRoom(MultipartFile photo, String roomType, BigDecimal roomPrice) throws IOException, SerialException, SQLException;
+
+    java.util.List<String> getAllRoomTypes();
+
     
 }

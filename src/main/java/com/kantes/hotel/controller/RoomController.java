@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import javax.sql.rowset.serial.SerialException;
 
+import java.util.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,10 @@ import com.kantes.hotel.response.RoomResponse;
 import com.kantes.hotel.service.IRoomService;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
+
+
 
 @RestController
 @RequiredArgsConstructor
@@ -37,4 +42,11 @@ public class RoomController {
 
         return ResponseEntity.ok(response);
     }
+
+
+    @GetMapping("/room/types")
+    public List <String> getRoomTypes() {        
+        return roomService.getAllRoomTypes();
+    }
+    
 }

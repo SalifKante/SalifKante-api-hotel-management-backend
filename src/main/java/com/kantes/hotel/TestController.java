@@ -7,9 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 public class TestController {
-
-    
-    
     @GetMapping("/")
     String message() {
         return "Hotel App";
