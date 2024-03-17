@@ -8,6 +8,7 @@ import org.apache.tomcat.util.codec.binary.Base64;
 
 import com.fasterxml.jackson.databind.JsonSerializable.Base;
 import com.kantes.hotel.model.BookedRoom;
+import com.kantes.hotel.model.Room;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,15 +34,17 @@ public class RoomResponse {
         this.roomPrice = roomPrice;
     }
 
-    public RoomResponse(Long id, String roomType, BigDecimal roomPrice, Boolean isBooked, byte[] photoBytes,
-            List<BookingResponse> bookings) {
+    public RoomResponse(Long id, String roomType, BigDecimal roomPrice, Boolean isBooked, byte[] photoBytes
+            /*,List<BookingResponse> bookings*/) {
         this.id = id;
         this.roomType = roomType;
-        this.roomPrice = roomPrice; 
+        this.roomPrice = roomPrice;
         this.isBooked = isBooked;
         this.photo = photoBytes != null ? Base64.encodeBase64String(photoBytes) : null;
-        this.bookings = bookings;
+        // this.bookings = bookings;
     }
+    
+    
     
     
 }
